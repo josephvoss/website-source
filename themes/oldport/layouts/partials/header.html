@@ -1,25 +1,15 @@
 <div class="whitebox col-12 text-center">
   <div class='col-xs-12 text-center '>  
     <div class='col-xs-12 text-center '>  
-      <h3 class='textbox'>Joseph Voss</h3>
+      <h3 class='textbox'>{{ .Site.Params.author.name }}</h3>
       <hr>
     </div>
     <div class="row">
+      {{ range .Site.Params.author.icons }}
       <div class="col">
-        <a href='mailto:jvoss@josephvoss.com' target="_blank"><i class='fa fa-envelope fa-1x' style="vertical-align: middle; font-size: 1.5em;"></i></a>
+        <a href='{{ .href }}' target="_blank"><i class='{{ .classes }}' style="vertical-align: middle; font-size: 1.5em;"></i></a>
       </div>
-
-      <div class="col">
-        <a href='https://github.com/josephvoss' target="_blank"><i class='fa fa-github fa-1x' style="vertical-align: middle; font-size: 1.5em;"></i></a>
-      </div>
-
-      <div class="col">
-        <a href='https://www.linkedin.com/in/josephvoss14' target="_blank"><i class='fa fa-linkedin fa-1x' style="vertical-align: middle; font-size: 1.5em;"></i></a>
-      </div>
-
-      <div class="col">
-        <a href='/resume.pdf' target="_blank"><i class='fa fa-file-text fa-1x' style="vertical-align: middle; font-size: 1.5em;"></i></a>
-      </div>
+      {{ end }}
 
       <!--
       <div class="col">
@@ -29,17 +19,17 @@
     </div>
   </div>
   <br>
-
-Mechanical Engineering student at The University of Texas at Austin
-specializing in Mechatronics and High Performance Computing.
+{{ .Site.Params.author.blurb }}
   <br>
   <br>
 </div>
 <div class='gap col-xs-12'></div>  
 
-<div class="whitebox textbox col-12" style='word-wrap: break-word;'>
-  <div class="text-center">
-    <h4>Site List</h4>
+<div class="whitebox col-12" style='word-wrap: break-word;'>
+  <div class="row textbox text-center" style='padding-top: .33rem'>
+    {{ range .Site.Menus.main }}
+    <div class='col'><a class='link' href="{{ .URL }}">{{ .Name }}</a></div>
+    {{ end }}
   </div>
 </div>
 <div class='gap col-xs-12'></div>  

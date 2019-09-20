@@ -1,0 +1,32 @@
+---
+baseURL: "http://example.org/"
+languageCode: "en-us"
+title: "My New Hugo Site"
+theme: "oldport"
+
+params:
+  author:
+    name: Joseph Voss
+    blurb: |
+      Mechanical Engineering student at The University of Texas at Austin specializing in Mechatronics and High Performance Computing.
+    icons:
+      - classes: fa fa-envelope fa-1x
+        href: mailto:jvoss@josephvoss.com
+      - classes: fa fa-github fa-1x
+        href: https://github.com/josephvoss
+      - classes: fa fa-linkedin fa-1x
+        href: https://www.linkedin.com/in/josephvoss14
+      - classes: fa fa-file-text fa-1x
+        href: /resume.pdf
+
+menu:
+  main:
+    - name: About
+      url: /about
+    - name: Projects
+      url: /
+    - name: Resume
+      url: /resume
+      #    - name: Services
+      #      url: /services
+

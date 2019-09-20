@@ -25,3 +25,15 @@ body {
   height: 100vh;
   position: relative;
 }
+
+.link {
+  text-decoration: underline;
+  color: inherit;
+}
+
+.site {
+  margin: auto;
+  word-spacing: 20px;
+  font-size: 18px;
+  display: inline-block;
+}
