@@ -1,6 +1,17 @@
 {{ define "main" }}
 <div class='textbox text-center'>
-  <h1>Hello World</h1>
-  <p>Testing</p>
+<h2 id="title" class="text-center" >
+  Projects</h2>
+  <hr>
+  <ul>
+    {{ range .Pages }}
+    <li class="text-left" style="padding-left:10px">
+      <h4>
+        <a class='link' href='{{ .Permalink}}'>{{ .Title }}</a>
+      </h4>
+      <div >{{ .Description }}</div>
+    </li>
+    {{ end }}
+  </ul>
 </div>
 {{ end }}

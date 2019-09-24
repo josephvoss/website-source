@@ -1,7 +1,14 @@
 <div class="whitebox textbox col-12">
   <div class="text-center">
     <h4>Posts</h4>
+    <hr>
   </div>
+  <ul>
+    {{ range .Site.RegularPages }}
+    <li><a class='link' href='{{ .Permalink }}'>{{ .LinkTitle }}</a></li>
+    {{ end }}
+  </ul>
+
 </div>
 <div class='gap col-xs-12'></div>  
 <div class="whitebox textbox col-12" style='word-wrap: break-word;'>

@@ -1,0 +1,42 @@
+{{ define "main" }}
+<div class="textbox">
+  <h2 id="title" class="text-center textbox" >{{ .Title }}</h2>
+  <hr>
+  <div>
+    <article id="content">
+      {{ .Date.Format "01-02-2006" }}
+      {{ .Content }}
+    </article>
+  </div>
+<aside id="meta">
+    <div>
+    <section>
+    </section>
+    {{ with .Params.topics }}
+    Topics:
+    <ul id="topics">
+      {{ range . }}
+        <li><a class="link" href="{{ "topics" | absURL}}{{ . | urlize }}">{{ . }}</a> </li>
+      {{ end }}
+    </ul>
+    {{ end }}
+    {{ with .Params.tags }}
+    Tags:
+    <ul id="tags">
+      {{ range . }}
+        <li> <a class="link" href="{{ "tags" | absURL }}{{ . | urlize }}">{{ . }}</a> </li>
+      {{ end }}
+    </ul>
+    {{ end }}
+    </div>
+    <div>
+        {{ with .PrevInSection }}
+          <a class="previous" href="{{.Permalink}}"> {{.Title}}</a>
+        {{ end }}
+        {{ with .NextInSection }}
+          <a class="next" href="{{.Permalink}}"> {{.Title}}</a>
+        {{ end }}
+    </div>
+</aside>
+</div>
+{{ end }}

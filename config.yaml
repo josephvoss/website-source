@@ -1,5 +1,5 @@
 ---
-baseURL: "http://example.org/"
+baseURL: "example.com"
 languageCode: "en-us"
 title: "My New Hugo Site"
 
@@ -17,6 +17,9 @@ params:
         href: https://www.linkedin.com/in/josephvoss14
       - classes: fa fa-file-text fa-1x
         href: /resume.pdf
+
+permalinks:
+  posts: /:title/
 
 menu:
   main:
