@@ -5,7 +5,7 @@
   </div>
   <ul>
     {{ range .Site.RegularPages }}
-    <li><a class='link' href='{{ .Permalink }}'>{{ .LinkTitle }}</a></li>
+    <li><a href='{{ .Permalink }}'>{{ .LinkTitle }}</a></li>
     {{ end }}
   </ul>
 
@@ -75,7 +75,7 @@
 value.to_s.gsub(URI.regexp(['http','https','ftp'])) { |c| "<a
     href=\"#{$&}\">#{$&}</a>" }
     </script> -->
-<a class="link" href="/bibliography/FLAT17.html">Details</a></li>
+<a href="/bibliography/FLAT17.html">Details</a></li>
 <li>Student Cluster Competition 2016 reproducibility challenge: Genomic partitioning with ParConnect
 
 <!--
@@ -111,5 +111,5 @@ value.to_s.gsub(URI.regexp(['http','https','ftp'])) { |c| "<a
 value.to_s.gsub(URI.regexp(['http','https','ftp'])) { |c| "<a
     href=\"#{$&}\">#{$&}</a>" }
     </script> -->
-<a class="link" href="/bibliography/ABABAO2017.html">Details</a></li></ol>
+<a href="/bibliography/ABABAO2017.html">Details</a></li></ol>
 </div>
