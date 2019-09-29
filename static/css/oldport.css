@@ -26,7 +26,7 @@ body {
   position: relative;
 }
 
-.link {
+a:link, .link {
   text-decoration: underline;
   color: inherit;
 }
@@ -36,4 +36,11 @@ body {
   word-spacing: 20px;
   font-size: 18px;
   display: inline-block;
+}
+
+
+.center_img {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
 }
