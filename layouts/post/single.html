@@ -29,13 +29,19 @@
     </ul>
     {{ end }}
     </div>
-    <div>
+    <div class='row'>
+      <div class='col'>
         {{ with .PrevInSection }}
-          <a class="previous" href="{{.Permalink}}"> {{.Title}}</a>
+          Previous post: <a class="previous link" href="{{.Permalink}}"> {{.Title}}</a>
         {{ end }}
+      </div>
+      <div class='col'>
+      <div>
+      <div class='col' style="text-align: right;">
         {{ with .NextInSection }}
-          <a class="next" href="{{.Permalink}}"> {{.Title}}</a>
+          Next post: <a class="next link" href="{{.Permalink}}"> {{.Title}}</a>
         {{ end }}
+      </div>
     </div>
 </aside>
 </div>
