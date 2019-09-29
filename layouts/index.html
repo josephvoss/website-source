@@ -6,11 +6,12 @@
   <ul>
     {{ range .Pages }}
     <li class="text-left" style="padding-left:10px">
-      <h4>
+      <h5>
         <a class='link' href='{{ .Permalink}}'>{{ .Title }}</a>
-      </h4>
+      </h5>
       <div >{{ .Description }}</div>
     </li>
+    <br>
     {{ end }}
   </ul>
 </div>
