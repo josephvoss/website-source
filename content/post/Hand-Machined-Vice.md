@@ -2,6 +2,7 @@
 
 title: Hand Machined Vice 
 date: 2017-12-14T00:00:00-06:00
+draft: false
 layout: post
 tags:
   - mechanical
