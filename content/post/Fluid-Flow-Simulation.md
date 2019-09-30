@@ -3,7 +3,7 @@
 title: Fluid Flow Simulation
 date: 2016-05-01T00:00:00-06:00
 draft: false
-group: posts
+layout: posts
 tags: 
   - high-performance-computing
   - academic
