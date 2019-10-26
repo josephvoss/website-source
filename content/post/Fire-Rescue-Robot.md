@@ -2,7 +2,7 @@
 
 title: Fire Rescue Robot 
 draft: false
-layout: post
+type: post
 date: 2017-12-16T00:00:00-06:00
 tags:
   - mechanical

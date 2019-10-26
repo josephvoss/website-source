@@ -11,7 +11,7 @@
   src="/img/Vice1.jpg">
   <br>
   <ul>
-    {{ range .Pages }}
+    {{ range where .Site.RegularPages "Type" "post" }}
     <li class="text-left" style="padding-left:10px">
       <h5>
         <a class='link' href='{{ .Permalink}}'>{{ .Title }}</a>

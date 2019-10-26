@@ -1,0 +1,24 @@
+{{ define "main" }}
+<br>
+  <img src="/img/headshot.jpg" class="center_img center-block" style="max-width: 50%; border-radius: 500px; border: 10px solid #FFFFFF;" id="headshot_image" alt="A pretty cool dude">
+
+<div class="textbox">
+  <h2 id="title" class="text-center textbox" >{{ .Title }}</h2>
+  <hr>
+  <div>
+    <article id="content">
+      {{ .Content }}
+      <div class="text-center">
+          <h4>Things I've done</h4>
+          <hr>
+      </div>
+      <br>
+      <div class="text-center">
+          <h4>Things I wrote</h4>
+          <hr>
+      </div>
+      <br>
+    </article>
+  </div>
+</div>
+{{ end }}
