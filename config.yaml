@@ -1,5 +1,5 @@
 ---
-baseURL: "example.com"
+baseURL: "josephvoss.com"
 languageCode: "en-us"
 title: "My New Hugo Site"
 
@@ -28,7 +28,7 @@ menu:
     - name: Projects
       url: /
     - name: Resume
-      url: /resume
+      url: /resume.html
       #    - name: Services
       #      url: /services
 
