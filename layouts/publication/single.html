@@ -1,0 +1,19 @@
+{{ define "main" }}
+<div class="textbox">
+  <h2 id="title" class="text-center textbox" >{{ .Title }}</h2>
+  <hr>
+  <div class="textbox" >{{ .Description }}</div>
+  <hr>
+  <div>
+    <article id="content">
+      {{ .Content }}
+
+      Read the full text at <a class="link" href="{{ .Params.Doi }}">{{ .Params.Doi }}</a>, or please email me if you'd be interested in a copy.
+      <br>
+      <br>
+      <a class="link" href="{{ .Params.Bibtex }}">Bibtex citation</a>
+    </article>
+    <br>
+  </div>
+</div>
+{{ end }}

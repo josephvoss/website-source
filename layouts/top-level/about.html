@@ -17,6 +17,13 @@
           <h4>Things I wrote</h4>
           <hr>
       </div>
+          <ul>
+            {{ range where .Site.RegularPages "Type" "publication" }} <li><a class='link' href='{{ .Permalink }}'>{{ .LinkTitle }}</a></li>
+            {{ end }}
+            <li>
+            <a href="http://sites.utexas.edu/studyabroad/self-discovery-in-austria/" class='link'>Reflections on Study Abroad</a>
+            </li>
+          </ul>
       <br>
     </article>
   </div>
