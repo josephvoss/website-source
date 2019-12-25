@@ -34,4 +34,5 @@ overall, which given that our team was made up entirelly of new competitors I
 was very pleased with.
 
 
-[Link to the SCC Competition's website](http://www.studentclustercompetition.us/2016/index.html).
+* [Link to the SCC Competition's website](http://www.studentclustercompetition.us/2016/index.html).
+* [Link to our SCC Team](http://www.studentclustercompetition.us/2016/Texas/index.html).
