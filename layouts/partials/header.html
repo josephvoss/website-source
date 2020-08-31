@@ -1,3 +1,22 @@
+<div class="head">
+  <div class="flex-container">
+    <div class="site-title">
+      <a class='link' href="/">
+        {{ .Site.Params.author.name }}
+      </a>
+    </div>
+    {{ range .Site.Menus.main }}
+    <div class='menu-item'><a class='link' href="{{ .URL }}">{{ .Name }}</a></div>
+    {{ end }}
+  </div>
+  <div class="icon-bar">
+    {{ range .Site.Params.author.icons }}
+      <a class="icon" href='{{ .href }}'><i class='{{ .classes }}'></i></a>
+    {{ end }}
+  </div>
+</div>
+
+<!--
 <div class="whitebox col-12 text-center">
   <div class='col-xs-12 text-center '>  
     <div class='col-xs-12 text-center '>  
@@ -11,11 +30,9 @@
       </div>
       {{ end }}
 
-      <!--
       <div class="col">
         <a href='https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x8819979cb823142fd8897ad98089b0998c7ec376' target="_blank"><i class='fa fa-key fa-1x' style="vertical-align: middle; font-size: 1.5em;"></i></a>
       </div>
-      -->
     </div>
   </div>
   <br>
@@ -33,3 +50,4 @@
   </div>
 </div>
 <div class='gap col-xs-12'></div>  
+      -->
