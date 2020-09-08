@@ -1,23 +1,18 @@
-<div class="whitebox textbox col-12">
-  <div class="text-center">
-    <h4>Posts</h4>
-    <hr>
-  </div>
-  <ul>
-    {{ range where .Site.RegularPages "Type" "post" }}
-    <li><a class='link' href='{{ .Permalink }}'>{{ .LinkTitle }}</a></li>
-    {{ end }}
-  </ul>
-
-</div>
-<div class='gap col-xs-12'></div>  
-<div class="whitebox textbox col-12" style='word-wrap: break-word;'>
-  <div class="text-center">
-    <h4>Publications</h4>
-  </div>
+<div>
+  <h2 class="text-center">Posts</h2>
   <hr>
   <ul>
-    {{ range where .Site.RegularPages "Type" "publication" }} <li><a class='link' href='{{ .Permalink }}'>{{ .LinkTitle }}</a></li>
+    {{ range where .Site.RegularPages "Type" "post" }}
+    <li><a class='nounder-link' href='{{ .Permalink }}'>{{ .LinkTitle }}</a></li>
+    {{ end }}
+  </ul>
+</div>
+
+<div>
+  <h2 class="text-center">Publications</h2>
+  <hr>
+  <ul>
+    {{ range where .Site.RegularPages "Type" "publication" }} <li><a class='nounder-link' href='{{ .Permalink }}'>{{ .LinkTitle }}</a></li>
     {{ end }}
   </ul>
 </div>

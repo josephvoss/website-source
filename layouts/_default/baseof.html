@@ -3,9 +3,13 @@
     {{- partial "head.html" . -}}
     <body>
       {{- partial "header.html" . -}}
+      <div class="flex-container-main"> 
       <div id="content">
         {{- block "main" . }}{{- end }}
       </div>
+      <div id="footer">
       {{- partial "footer.html" . -}}
+      </div>
+      </div>
     </body>
 </html>

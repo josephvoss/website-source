@@ -1,12 +1,13 @@
 <div class="head">
   <div class="flex-container">
     <div class="site-title">
-      <a class='link' href="/">
+      <a class='nounder-link' href="/">
         {{ .Site.Params.author.name }}
       </a>
     </div>
+  <div class="start-nav-item"></div>
     {{ range .Site.Menus.main }}
-    <div class='menu-item'><a class='link' href="{{ .URL }}">{{ .Name }}</a></div>
+    <div class='menu-item'><a class='nounder-link' href="{{ .URL }}">{{ .Name }}</a></div>
     {{ end }}
   </div>
   <div class="icon-bar">

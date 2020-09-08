@@ -1,21 +1,22 @@
 {{ define "main" }}
-<div class='textbox text-center'>
+<div class='textbox'>
 <h2 id="title" class="text-center" >
   Projects</h2>
   <hr>
   <br>
+  
+  <!--
   <img class="img-responsive center_img" style="max-width: 50%;"
   src="/img/Bluetooth_display.jpg">
   <br>
   <img class="img-responsive center_img" style="max-width: 75%;"
   src="/img/Vice1.jpg">
   <br>
+  -->
   <ul>
     {{ range where .Site.RegularPages "Type" "post" }}
     <li class="text-left" style="padding-left:10px">
-      <h5>
-        <a class='link' href='{{ .Permalink}}'>{{ .Title }}</a>
-      </h5>
+      <a class='underline-link' href='{{ .Permalink}}'>{{ .Title }}</a>
       <div >{{ .Description }}</div>
     </li>
     <br>

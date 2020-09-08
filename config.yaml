@@ -25,10 +25,10 @@ menu:
   main:
     - name: About
       url: /about
-    - name: Projects
-      url: /
     - name: Resume
       url: /resume.html
+    - name: Projects
+      url: /
       #    - name: Services
       #      url: /services
 

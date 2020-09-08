@@ -1,50 +1,43 @@
 {{ define "main" }}
-<div class="textbox">
-  <h2 id="title" class="text-center textbox" >{{ .Title }}</h2>
-  <hr>
-  <div>
-    <article id="content">
-      {{ .Date.Format "01-02-2006" }}
-      <br>
-      <br>
-      {{ .Content }}
-    </article>
-  </div>
-<aside id="meta">
-    <div>
-    <section>
-    </section>
-    {{ with .Params.topics }}
-    Topics:
-    <ul id="topics">
-      {{ range . }}
-        <li><a class="link" href="{{ "topics" | absURL}}{{ . | urlize }}">{{ . }}</a> </li>
-      {{ end }}
-    </ul>
-    {{ end }}
-    {{ with .Params.tags }}
-    Tags:
-    <ul id="tags">
-      {{ range . }}
-        <li> <a class="link" href="{{ "tags" | absURL }}{{ . | urlize }}">{{ . }}</a> </li>
-      {{ end }}
-    </ul>
-    {{ end }}
-    </div>
-    <div class='row'>
-      <div class='col'>
-        {{ with .PrevInSection }}
-          Previous post: <a class="previous link" href="{{.Permalink}}"> {{.Title}}</a>
-        {{ end }}
-      </div>
-      <div class='col'>
-      <div>
-      <div class='col' style="text-align: right;">
-        {{ with .NextInSection }}
-          Next post: <a class="next link" href="{{.Permalink}}"> {{.Title}}</a>
-        {{ end }}
-      </div>
-    </div>
-</aside>
+<h2 id="title" class="text-center" >{{ .Title }}</h2>
+<hr>
+<div>
+  <article id="content">
+    {{ .Date.Format "01-02-2006" }}
+    <br>
+    <br>
+    {{ .Content }}
+  </article>
 </div>
+<aside id="meta">
+  {{ with .Params.topics }}
+  Topics:
+  <ul id="topics">
+    {{ range . }}
+      <li><a class="link" href="{{ "topics" | absURL}}{{ . | urlize }}">{{ . }}</a> </li>
+    {{ end }}
+  </ul>
+  {{ end }}
+  {{ with .Params.tags }}
+  Tags:
+  <ul id="tags">
+    {{ range . }}
+      <li> <a class="link" href="{{ "tags" | absURL }}{{ . | urlize }}">{{ . }}</a> </li>
+    {{ end }}
+  </ul>
+  {{ end }}
+  <br>
+  <div class='flex-container-post-nav'>
+    <div class='post-nav'>
+      {{ with .PrevInSection }}
+        Previous post: <a class="previous link" href="{{.Permalink}}"> {{.Title}}</a>
+      {{ end }}
+    </div>
+    <div class='post-nav'>
+      {{ with .NextInSection }}
+        Next post: <a class="next link" href="{{.Permalink}}"> {{.Title}}</a>
+      {{ end }}
+    </div>
+  </div>
+</aside>
 {{ end }}
