@@ -21,7 +21,8 @@
 
 .site-title {
   font-size: 24px;
-  margin-left: 1%;
+  text-align: center;
+  margin-bottom: 2pt;
 }
 
 /* Flex all headers to the right, gap div */
@@ -38,19 +39,18 @@
 }
 
 .icon-bar {
-  margin-top: .5%;
-  margin-left: 1.5%;
-  align-items: right;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .icon {
   color: inherit;
   font-size: 1.25em;
-  padding-right: 10px;
 }
 
 body {
-  font-family: "Ubuntu Mono", "Font Awesome";
+  font-family: "Roboto", "Font Awesome";
 }
 
 #content {
