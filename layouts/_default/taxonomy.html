@@ -1,0 +1,13 @@
+{{ define "main" }}
+<h2 id="title" class="text-center" >Posts for tag: {{ .Title }}</h2>
+<hr>
+<div>
+  <ul>
+    {{ range .Data.Pages }}
+    <li>
+      <a class="link" href="{{.RelPermalink}}">{{ .Title }}</a>
+    </li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }}

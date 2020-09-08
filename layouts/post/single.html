@@ -14,7 +14,7 @@
   Topics:
   <ul id="topics">
     {{ range . }}
-      <li><a class="link" href="{{ "topics" | absURL}}{{ . | urlize }}">{{ . }}</a> </li>
+      <li><a class="link" href="{{ "topics" | absURL}}/{{ . | urlize }}">{{ . }}</a> </li>
     {{ end }}
   </ul>
   {{ end }}
@@ -22,7 +22,7 @@
   Tags:
   <ul id="tags">
     {{ range . }}
-      <li> <a class="link" href="{{ "tags" | absURL }}{{ . | urlize }}">{{ . }}</a> </li>
+      <li> <a class="link" href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a> </li>
     {{ end }}
   </ul>
   {{ end }}
