@@ -93,3 +93,11 @@ body {
 a, a:link, .link {
   color: inherit;
 }
+
+#headshot_image {
+  max-width: 50%;
+  border-radius: 500px;
+  border: 10px solid #FFFFFF;
+  margin: 0 auto;
+  display: block;
+}
