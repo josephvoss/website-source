@@ -101,3 +101,10 @@ a, a:link, .link {
   margin: 0 auto;
   display: block;
 }
+
+.post_image {
+  max-width: 75%;
+  border: 10px solid #FFFFFF;
+  margin: 0 auto;
+  display: block;
+}

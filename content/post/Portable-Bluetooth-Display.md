@@ -35,7 +35,6 @@ FPGA to handle this serial communication and LCD driving, but was unable to see 
 fruition.
 
 <br>
-<img class="img-responsive center_img" style="max-width: 75%;"
-src="/img/Bluetooth_display.jpg">
+<img class="post_image" src="/img/Bluetooth_display.jpg">
 <br>
 

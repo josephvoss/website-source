@@ -14,11 +14,11 @@ description: |
 ---
 
 <br>
-<img class="img-responsive center_img" style="max-width: 75%" src="/img/Vice1.jpg">
+<img class="post_image" src="/img/Vice1.jpg">
 <br>
 
 <br>
-<img class="img-responsive center_img" style="max-width: 75%" src="/img/Vice2.jpg">
+<img class="post_image" src="/img/Vice2.jpg">
 <br>
 
 In Fall of 2017 I took a course in Machine tool operation. This class met for 6

@@ -12,8 +12,7 @@ description: |
 ---
 
 <br>
-<img class="img-responsive center_img" style="max-width: 90%;"
-src="/img/grafana_speedtest.png">
+<img class="post_image" src="/img/grafana_speedtest.png">
 <br>
 
 As part of the Student Cluster Competition team with TACC (details 

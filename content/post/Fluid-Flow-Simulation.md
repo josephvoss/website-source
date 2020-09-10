@@ -14,7 +14,7 @@ description: |
 
 ---
 
-<img class="img-responsive center_img" style="max-width: 75%" src="/img/solvedFlow2.png">
+<img class="post_image" src="/img/solvedFlow2.png">
 <div align="center">Solved velocity and pressure for flow through a 2
 dimensional channel</div>
 <br>
