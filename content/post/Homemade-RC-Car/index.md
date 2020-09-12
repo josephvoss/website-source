@@ -11,11 +11,17 @@ description: |
  February to May 2017:
  Design and manufacture of the mechanical components of an RC car for a class in
  Machine Elements
-
+resources:
+  - name: "Full car picture"
+    src: "Full_car.jpg"
+  - name: "Rendered car"
+    src: "back right view.png"
+  - name: "FEA Analysis"
+    src: "FEA Chassis.png"
 ---
 
 <br>
-<img class="img-responsive center_img" style="max-width: 75%" src="/img/back right view.png">
+{{< laura_img src="Rendered Car" alt="Rendered car view" class="post_image">}}
 <br>
 
 For the final project in Machine Elements we were tasked to design and build
@@ -46,7 +52,7 @@ The flexure issue was insignificant enough that by the time we finished
 building the rest of the car we figured it hold up throughout the final race.
 
 <br>
-<img class="img-responsive center_img" style="max-width: 75%" src="/img/Full_car.jpg">
+{{< laura_img src="Full car picture" alt="Assembled RC car" class="post_image">}}
 <br>
 
 The drive-train design centered around the choice in the gear ratio. Using the
@@ -73,7 +79,7 @@ linkages and the angle of the knuckles. All of these parts took less than half
 an hour to print, and fit perfectly on the first attempt.
 
 <br>
-<img class="img-responsive center_img" style="max-width: 75%" src="/img/rc-car-steering-cropped.gif">
+<img class="post_image" src="/img/rc-car-steering-cropped.gif">
 <br>
 
 Overall our car placed first in the competition. Our final report and presentation are shown below.
@@ -84,5 +90,5 @@ Overall our car placed first in the competition. Our final report and presentati
 presentation](https://docs.google.com/presentation/d/1Y0cdPDCUEBBNTLJp0JSCgqZbfYQr_6cODhHjN4-cQM4/pub?start=false&loop=false&delayms=3000#slide=id.g217269ab07_0_81)
 
 <br>
-<img class="img-responsive center_img" style="max-width: 75%" src="/img/FEA Chassis.png">
+{{< laura_img src="FEA Analysis" alt="Finite element analysis of the car" class="post_image">}}
 <br>

@@ -1,5 +1,4 @@
 ---
-
 title: Portable Bluetooth Display
 date: 2015-03-01T00:00:00-06:00
 draft: false
@@ -10,7 +9,9 @@ tags:
 description: |
  March to April 2015:
  Text-only serial display operating wirelessly over bluetooth
-
+resources:
+  - name: "Bluetooth display"
+    src: "Bluetooth_display.jpg"
 ---
 In a similar vein to the LED projector I attempted to build earlier, I wanted to 
 create a portable text-only display. This time instead of creating a display from 
@@ -35,7 +36,6 @@ FPGA to handle this serial communication and LCD driving, but was unable to see 
 fruition.
 
 <br>
-<img class="img-responsive center_img" style="max-width: 75%;"
-src="/img/Bluetooth_display.jpg">
+{{< laura_img src="Bluetooth display" alt="Display connected to microcontroller showing Linux serial console"  class="post_image">}}
 <br>
 

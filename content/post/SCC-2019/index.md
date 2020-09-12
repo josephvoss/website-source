@@ -14,7 +14,7 @@ Several of my colleagues at Oak Ridge National Labs (including myself) got
 involved in high performance computing through the Student Cluster Competition.
 More about the competition can be found
 [at the competition website](https://www.studentclustercompetition.us/) or in
-the [post I wrote]({{< relref "Student-Cluster-Competition.md" >}}) earlier when I
+the [post I wrote]({{< ref "/post/student-cluster-competition" >}}) earlier when I
 competed, but essentially it challenges undergraduate students to design, build,
 and manage a small HPC cluster to run a set of scientific applications quickly
 and efficiently. This competition does a fantastic job of getting students

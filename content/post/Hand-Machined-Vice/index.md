@@ -10,15 +10,17 @@ tags:
 description: |
  December 2017:
  Machine tool operations final project
-
+resources:
+- name: Vice1.jpg
+  src: Vice1.jpg
+- name: Vice2.jpg
+  src: Vice2.jpg
 ---
 
 <br>
-<img class="img-responsive center_img" style="max-width: 75%" src="/img/Vice1.jpg">
+{{< laura_img src="Vice1.jpg" alt="A metal vice" class="post_image">}}
 <br>
-
-<br>
-<img class="img-responsive center_img" style="max-width: 75%" src="/img/Vice2.jpg">
+{{< laura_img src="Vice2.jpg" alt="A metal vice from the other angle" class="post_image">}}
 <br>
 
 In Fall of 2017 I took a course in Machine tool operation. This class met for 6

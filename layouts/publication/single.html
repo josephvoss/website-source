@@ -1,11 +1,11 @@
 {{ define "main" }}
 <div class="textbox">
-  <h2 id="title" class="text-center textbox" >{{ .Title }}</h2>
+  <h2 id="title" class="text-center" >{{ .Title }}</h2>
   <hr>
-  <div class="textbox" >{{ .Description }}</div>
+  {{ .Description }}
   <hr>
   <div>
-    <article id="content">
+    <article>
       {{ .Content }}
 
       Read the full text at <a class="link" href="{{ .Params.Doi }}">{{ .Params.Doi }}</a>, or please email me if you'd be interested in a copy.
