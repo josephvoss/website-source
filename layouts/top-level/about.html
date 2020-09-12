@@ -8,7 +8,7 @@
   <div>
     <article id="content">
       {{ .Content }}
-      <h4 class="text-center">Things I wrote</h4>
+      <h3 id="title" class="text-center">Things I wrote</h3>
       <hr>
       <ul>
         {{ range where .Site.RegularPages "Type" "publication" }} <li><a class="nounder-link" href='{{ .Permalink }}'>{{ .LinkTitle }}</a></li>

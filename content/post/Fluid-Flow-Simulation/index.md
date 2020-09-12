@@ -11,10 +11,12 @@ tags:
 description: |
  April to May 2016:
  Navier-Stokes solver in C++ using MPI on TACC systems
-
+resources:
+  - name: "Solved fluid flow"
+    src: "solvedFlow2.png"
 ---
 
-<img class="post_image" src="/img/solvedFlow2.png">
+{{< laura_img src="Solved fluid flow" alt="Figure showing flow velocity and pressure lines" class="post_image">}}
 <div align="center">Solved velocity and pressure for flow through a 2
 dimensional channel</div>
 <br>

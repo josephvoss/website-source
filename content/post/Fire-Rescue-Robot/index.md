@@ -12,7 +12,13 @@ description: |
  December 2017:
  Senior design project to design and prototype a remote
  controlled fire rescue robot
- 
+resources:
+- name: Fire_Rescue_Closed.jpg
+  src: IMG_20180228_210610.jpg
+- name: Fire_Rescue_Half_Open.jpg
+  src: IMG_20180228_210401.jpg
+- name: Fire_Rescue_Open.jpg
+  src: IMG_20180228_210450.jpg
 ---
 
 <!--
@@ -21,7 +27,7 @@ description: |
 <br>
 -->
 <br>
-<video class="img-responsive center_img" style="max-width: 75%"  src="/img/fire-rescue.webm" type="video/webm" controls autoplay loop>
+<video class="post_image"  src="/img/fire-rescue.webm" type="video/webm" controls autoplay loop>
 Sorry, your browser doesn't support embedded videos, 
 but don't worry, you can <a href="/img/fire-rescue.webm">download it</a>
 and watch it with your favorite video player!
@@ -63,12 +69,12 @@ control the robot is hosted on Github
 [here](https://github.com/josephvoss/ME-366J_Fire-Rescue/).
 
 <br>
-<img class="img-responsive center_img" style="max-width: 75%" src="/img/IMG_20180228_210610.jpg">
+{{< laura_img src="Fire_Rescue_Closed.jpg" alt="Fire Rescue bot closed" class="post_image">}}
 <br>
-<img class="img-responsive center_img" style="max-width: 75%" src="/img/IMG_20180228_210401.jpg">
+{{< laura_img src="Fire_Rescue_Half_Open.jpg" alt="Fire Rescue bot half open" class="post_image">}}
 <br>
-<img class="img-responsive center_img" style="max-width: 75%" src="/img/IMG_20180228_210450.jpg">
-
+{{< laura_img src="Fire_Rescue_Open.jpg" alt="Fire Rescue bot open" class="post_image">}}
+<br>
 
 <!--
 <br>

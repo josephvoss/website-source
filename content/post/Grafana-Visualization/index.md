@@ -8,11 +8,13 @@ tags:
   - software
 description: |
  February 2017: Visualization of home server metrics and the status of local sensors
-
+resources:
+  - name: "Grafana speedtest"
+    src: "grafana_speedtest.png"
 ---
 
 <br>
-<img class="post_image" src="/img/grafana_speedtest.png">
+{{< laura_img src="Grafana speedtest" alt="Speedtest dashboard in grafana" class="post_image">}}
 <br>
 
 As part of the Student Cluster Competition team with TACC (details 

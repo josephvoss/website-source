@@ -49,15 +49,17 @@
   font-size: 1.25em;
 }
 
-body {
-  font-family: "Roboto", "Font Awesome";
+body, #title {
+  font-family: "Ubuntu Mono", "Font Awesome";
 }
 
 #content {
   flex-basis: 600px;
   min-width: 0;
   margin-right: 1%;
+  text-align: justify;
   text-justify: auto;
+  font-family: "Roboto", "Font Awesome";
 }
 
 #footer{
