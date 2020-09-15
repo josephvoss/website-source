@@ -28,12 +28,12 @@
   {{ end }}
   <br>
   <div class='flex-container-post-nav'>
-    <div class='post-nav'>
+    <div class='post-nav-left'>
       {{ with .PrevInSection }}
         Previous post: <a class="previous link" href="{{.Permalink}}"> {{.Title}}</a>
       {{ end }}
     </div>
-    <div class='post-nav'>
+    <div class='post-nav-right'>
       {{ with .NextInSection }}
         Next post: <a class="next link" href="{{.Permalink}}"> {{.Title}}</a>
       {{ end }}
