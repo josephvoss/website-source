@@ -33,6 +33,7 @@ able to work with such a talented and motivated group of students, and I'm very
 thankful I had the opportunity to do a small amount to help further their
 education.
 
+* [ORNL blog post](https://www.olcf.ornl.gov/2019/11/13/the-olcf-to-mentor-interns-competing-at-sc19/)
 * [HPCWire interview](https://www.hpcwire.com/off-the-wire/six-students-to-represent-onrl-at-annual-student-cluster-competition-at-sc19/)
 * [NVIDIA blog post on our team](https://blogs.nvidia.com/blog/2019/11/13/student-cluster-challenge-sc19/)
 * [SCC19 website](https://www.studentclustercompetition.us/2019/Teams/TeamTennessee/index.html)
