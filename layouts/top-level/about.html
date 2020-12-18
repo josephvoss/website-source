@@ -8,14 +8,19 @@
   <div>
     <article id="content">
       {{ .Content }}
+      <h3 id="title" class="text-center">Things I've done</h3>
+      <hr>
+      <ul>
+        {{ range .Params.things_I_did }}
+        <li><a class="nounder-link" href='{{ .link }}'>{{ .title }}</a></li>
+        {{ end }}
+      </ul>
       <h3 id="title" class="text-center">Things I wrote</h3>
       <hr>
       <ul>
-        {{ range where .Site.RegularPages "Type" "publication" }} <li><a class="nounder-link" href='{{ .Permalink }}'>{{ .LinkTitle }}</a></li>
+        {{ range .Params.things_I_wrote }}
+        <li><a class="nounder-link" href='{{ .link }}'>{{ .title }}</a></li>
         {{ end }}
-        <li>
-        <a href="http://sites.utexas.edu/studyabroad/self-discovery-in-austria/" class="nounder-link">Reflections on Study Abroad</a>
-        </li>
       </ul>
       <br>
     </article>
