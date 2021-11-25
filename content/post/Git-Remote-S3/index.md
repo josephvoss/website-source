@@ -2,12 +2,12 @@
 title: Treating S3 as a git object store
 date: 2021-05-14T00:00:00-07:00
 draft: false
+type: post
 tags:
   - software
 description: |
-  May 2021
+  May 2021:
   Built a rust command line tool to store git repositories in S3
-
 ---
 
 ## What's an object store?
