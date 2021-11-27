@@ -10,6 +10,12 @@ description: |
   Built a rust command line tool to store git repositories in S3
 ---
 
+In May 2021 my interest in learning Rust had really taken off, but I needed to
+find a toy project to work on so I could dive into it. I'd been really
+fascinated by Git's internals since I learned about them in 2018, and I used
+this as an excuse to build a remote helper letting git treat an S3 object store
+as a remote repository.
+
 ## What's an object store?
 
 An object store, the most common of which is Amazon's S3, is a storage solution
@@ -22,9 +28,9 @@ option.
 
 ## How does this relate to git?
 
-Borrowing from the [git reference
-book](https://git-scm.com/book/en/v2/Git-Internals-Git-Objects) - "the core of
-Git is a simple key-value data store". Git works internally by building a
+First, let'st take about what git is internally. Borrowing from the [git
+reference book](https://git-scm.com/book/en/v2/Git-Internals-Git-Objects) -
+"the core of Git is a simple key-value data store". Git works by building a
 Merkle tree, where objects are referred to by their hashes and combined
 together to show a complete description of the source code in a given state.
 There are three main git objects used to do this; commits, trees, and blobs.
@@ -67,15 +73,29 @@ Using this as an excuse to get more familiar with git's internals, and to
 develop something using rust, I set out to built a remote helper that could
 communicate with a S3 bucket.
 
-And it works! There were a few small challenges like how to handle
-authentication to S3, but overall the process was relatively smooth. There are
-definite more improvements to be made, like handling pack files, garbage
+And it works! 
+<insert demo here>
+
+There are definite more improvements to be made, like handling pack files, garbage
 collection in the external repository, parallelism, and compressing objects in
 S3. Additionally it requires a compatible version of libssl on the host (using
-rust-native ssl libraries made the binary 250 MB!). Currently though it works
-as a proof of concept to push and pull repositories to S3 buckets, and the
-binaries can be downloaded from the latest release on
-[Github](https://github.com/josephvoss/git-remote-s3).
+rust-native ssl libraries made the binary 250 MB!). This also begs the question
+of what value this has. Normally when a git repository is hosted, there's a
+fair bit of management that needs to be done on the server side. This includes
+managing SSH keys, ensuring the different repositories have enough space and
+are backed up, managing the ssh/git server processes, etc. In short you would
+need to manage a compute and storage system to self-host git, or build
+automation to add authentication to a remote git server. In this case you only
+to worry about the storage consumed by the repositories. Authentication can be
+easier integrated with exisiting IAM tools already tied into S3. However,
+granular role controls are lost. Write access to the bucket to push testing
+branches allows overridding production branches.
+
+Regardless of the downsides, currently this tool it works
+as a proof of concept to push and pull repositories to S3 buckets. If you're
+interesting in reading more about it, the code is hosted on
+[Github](https://github.com/josephvoss/git-remote-s3). along with pre-built
+binaries.
 
 ## Want to learn more? Go read these posts by people who know what they're doing
 
