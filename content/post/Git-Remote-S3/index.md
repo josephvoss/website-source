@@ -11,10 +11,10 @@ description: |
 ---
 
 In May 2021 my interest in learning Rust had really taken off, but I needed to
-find a toy project to work on so I could dive into it. I'd been really
-fascinated by Git's internals since I learned about them in 2018, and I used
-this as an excuse to build a remote helper letting git treat an S3 object store
-as a remote repository.
+find a toy project to work on so I could dive into it. I'd been fascinated by
+Git's internals since I learned about them in 2018, and I used this as an
+excuse to build a remote helper letting git treat an S3 object store as a
+remote repository.
 
 ## What's an object store?
 
@@ -28,7 +28,7 @@ option.
 
 ## How does this relate to git?
 
-First, let'st take about what git is internally. Borrowing from the [git
+First, let's take about what git is internally. Borrowing from the [git
 reference book](https://git-scm.com/book/en/v2/Git-Internals-Git-Objects) -
 "the core of Git is a simple key-value data store". Git works by building a
 Merkle tree, where objects are referred to by their hashes and combined
@@ -73,8 +73,44 @@ Using this as an excuse to get more familiar with git's internals, and to
 develop something using rust, I set out to built a remote helper that could
 communicate with a S3 bucket.
 
+## How does a git remote-helper work?
+
+## Lessons learned (mostly about rust)
+
+* Rust error handling with Enums is really nice
+* No free-lunch, compilation time and binary size with rust is crazy.
+
 And it works! 
-<insert demo here>
+```
+# Add local binary to path so git will run it
+$ export PATH=$PATH:$(pwd)/target/release
+
+# Push a repository to s3
+$ git remote add backblaze s3://s3.us-west-002.backblazeb2.com/remote-s3-test
+$ git push backblaze main
+<wait a *very* long time>
+Everything up-to-date
+
+# What's in the bucket? The git object store
+$ b2 ls remote-s3-test | tail -n 5
+e1d1bce81d6776b6dbbdeddfe2244f3d8725cb0e
+e7298343fb974f86e154c4b3011d85f118d0a195
+ee0a1159d9a4184234dc8917b02f40988cba5af3
+ef1dc7ed3ad089ee9fe1492439bbe73e4e9c54cc
+refs/
+$ b2 ls remote-s3-test refs/heads
+refs/heads/main
+
+# Clone the repo (we need to specify the branch b/c we can't don't have a default set)
+$ git clone s3://s3.us-west-002.backblazeb2.com/remote-s3-test -b main
+Cloning into 'remote-s3-test'
+$ cd remote-s3-test
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+```
 
 There are definite more improvements to be made, like handling pack files, garbage
 collection in the external repository, parallelism, and compressing objects in
