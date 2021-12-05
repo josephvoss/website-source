@@ -73,13 +73,6 @@ Using this as an excuse to get more familiar with git's internals, and to
 develop something using rust, I set out to built a remote helper that could
 communicate with a S3 bucket.
 
-## How does a git remote-helper work?
-
-## Lessons learned (mostly about rust)
-
-* Rust error handling with Enums is really nice
-* No free-lunch, compilation time and binary size with rust is crazy.
-
 And it works! 
 ```
 # Add local binary to path so git will run it
@@ -130,7 +123,7 @@ branches allows overridding production branches.
 Regardless of the downsides, currently this tool it works
 as a proof of concept to push and pull repositories to S3 buckets. If you're
 interesting in reading more about it, the code is hosted on
-[Github](https://github.com/josephvoss/git-remote-s3). along with pre-built
+[Github](https://github.com/josephvoss/git-remote-s3), along with pre-built
 binaries.
 
 ## Want to learn more? Go read these posts by people who know what they're doing
