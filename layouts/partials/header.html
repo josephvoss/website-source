@@ -1,20 +1,56 @@
+<script>
+  function toggleTheme() {
+      let theme = localStorage.getItem('theme');
+      // Theme defaults to light w/ no localStorage. If null or light-mode, set dark-mode
+      let newTheme = (theme == 'dark-mode') ? 'light-mode' : 'dark-mode';
+      // Add transition class while we're doing the toggle, remove after transition finished
+      // Otherwise we'd have page flash on reload
+      document.body.classList.add('theme-transition');
+      setTheme(newTheme);
+      setTimeout(() => document.body.classList.remove('theme-transition'), 500);
+  }
+  function setTheme(theme) {
+    let dark = 'dark-mode';
+    let light = 'light-mode';
+    if (theme == dark) {
+      document.body.classList.add(dark);
+      document.body.classList.remove(light);
+      localStorage.setItem('theme', dark);
+    } else {
+      document.body.classList.add(light);
+      document.body.classList.remove(dark);
+      localStorage.setItem('theme', light);
+    }
+    console.log("Set " + theme);
+  }
+  function setCurrent() {setTheme(localStorage.getItem('theme'));}
+  setCurrent();
+</script>
 <div class="head">
-  <div class="flex-container">
-    <div class="flex-container-title">
-      <div class="site-title">
-        <a class='nounder-link' href="/">
-          {{ .Site.Params.author.name }}
-        </a>
-      </div>
-    <div class="icon-bar">
-      {{ range .Site.Params.author.icons }}
-        <a class="icon" href='{{ .href }}'><i class='{{ .classes }}'></i></a>
-      {{ end }}
+  <!-- Top bar: Name, gap, dark mode -->
+  <div class="flex-container title-bar">
+    <div class="site-title">
+      <a class='nounder-link' href="/">
+        {{ .Site.Params.author.name }}
+      </a>
+    </div>
+    <div></div>
+    <div onclick=toggleTheme()>
+      <i class='icon-toggle far fa-moon fa-1x'></i>
     </div>
   </div>
-  <div class="start-nav-item"></div>
-    {{ range .Site.Menus.main }}
-    <div class='menu-item'><a class='nounder-link' href="{{ .URL }}">{{ .Name }}</a></div>
-    {{ end }}
+    <!-- Second bar, icons, gap, menu -->
+    <div class="flex-container">
+      <div class="icon-bar">
+        {{ range .Site.Params.author.icons }}
+          <div class="icon"><a href='{{ .href }}'><i class='{{ .classes }}'></i></a></div>
+        {{ end }}
+      </div>
+      <div class="nav-bar">
+        {{ range .Site.Menus.main }}
+        <div class='menu-item'><a class='nounder-link' href="{{ .URL }}">{{ .Name }}</a></div>
+        {{ end }}
+        </div>
+    </div>
   </div>
 </div>

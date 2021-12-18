@@ -11,11 +11,11 @@ params:
     icons:
       - classes: fa fa-envelope fa-1x
         href: mailto:jvoss@josephvoss.com
-      - classes: fa fa-github fa-1x
+      - classes: fab fa-github fa-1x
         href: https://github.com/josephvoss
-      - classes: fa fa-linkedin fa-1x
+      - classes: fab fa-linkedin fa-1x
         href: https://www.linkedin.com/in/josephvoss14
-      - classes: fa fa-file-text fa-1x
+      - classes: fas fa-file-alt fa-1x
         href: /resume.pdf
 
 permalinks:
@@ -25,10 +25,10 @@ menu:
   main:
     - name: About
       url: /about
-    - name: Resume
-      url: /resume.html
     - name: Projects
       url: /
-      #    - name: Services
-      #      url: /services
 
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
