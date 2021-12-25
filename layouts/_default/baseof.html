@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
     {{- partial "head.html" . -}}
-    <body>
+    <body class="light-mode">
       {{- partial "header.html" . -}}
       <div class="flex-container-main"> 
-      <div id="content">
-        {{- block "main" . }}{{- end }}
+        <div id="content">
+          {{- block "main" . }}{{- end }}
+        </div>
+        <div id="footer">
+        {{- partial "footer.html" . -}}
+        </div>
       </div>
-      <div id="footer">
-      {{- partial "footer.html" . -}}
-      </div>
+      <div class="real-footer">
+        This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
       </div>
     </body>
 </html>

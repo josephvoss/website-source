@@ -1,3 +1,14 @@
+html, body {
+  margin: 0;
+  min-width:100%;
+  width: 100%;
+  /*
+  min-height: 100%;
+  max-height: 100%;
+  height: 100%;
+  */
+}
+
 .flex-container {
   display: flex;
   flex-direction: row;
@@ -29,38 +40,75 @@
   padding-left: 5px;
 }
 
-.site-title {
-  font-size: 24px;
-  text-align: center;
-  margin-bottom: 2pt;
+/* Flex all headers to the right, gap div */
+.nav-bar{
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 3%;
+}
+@media screen and (max-width: 900px) {
+  .nav-bar {
+    padding-right: 1%;
+  }
 }
 
-/* Flex all headers to the right, gap div */
-.start-nav-item {
-  margin-left: auto;
+.title-bar {
+  padding-top: 1%;
+  padding-left: 3%;
+  padding-right: 3%;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+@media screen and (max-width: 900px) {
+  .title-bar {
+    padding-top: 1%;
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+}
+
+.site-title {
+  font-size: 24px;
 }
 
 /* Align menu items vertically to title, give some space */
 .menu-item {
-  margin-right: 2%;
+  margin-left: 1em;
   justify-content: center;
   font-size: 18px;
-  padding-top: 3px;
 }
 
 .icon-bar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding-left: 3%;
+  padding-top: 5px;
+}
+@media screen and (max-width: 900px) {
+  .icon-bar {
+    padding-left: 1%;
+  }
 }
 
 .icon {
   color: inherit;
   font-size: 1.25em;
+  padding-left: .5em;
+  padding-right: .5em;
+}
+
+.icon-toggle {
+  color: inherit;
+  font-size: 1.25em;
 }
 
 body, #title {
-  font-family: "Ubuntu Mono", "Font Awesome";
+  font-family: "Roboto", "Font Awesome";
 }
 
 #content {
@@ -83,6 +131,12 @@ body, #title {
     flex-basis: 600px;
     min-width: 0;
   }
+}
+
+.real-footer {
+  padding-top: 3%;
+  padding-bottom: 1%;
+  text-align: center;
 }
 
 .text-center {
@@ -119,4 +173,27 @@ a, a:link, .link {
   border: 10px solid #FFFFFF;
   margin: 0 auto;
   display: block;
+}
+
+/* Theme classes */
+.dark-mode {
+  background-color: #1c1c1c;
+  color: white;
+}
+.light-mode {
+  color: black;
+  background-color: white;
+}
+.theme-transition {
+  /* Fade in background-color and text color changes */
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* rando stuf */
+@media only screen and (max-width:900px) {
+  #content {
+    padding-left: .5em;
+    padding-right: .5em;
+    margin-right: 0%;
+  }
 }
