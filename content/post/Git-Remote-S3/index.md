@@ -73,8 +73,8 @@ Using this as an excuse to get more familiar with git's internals, and to
 develop something using rust, I set out to built a remote helper that could
 communicate with a S3 bucket.
 
-And it works! 
-```
+And it works!
+```bash {linenos=table}
 # Add local binary to path so git will run it
 $ export PATH=$PATH:$(pwd)/target/release
 
