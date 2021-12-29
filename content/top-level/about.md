@@ -25,10 +25,10 @@ things_I_wrote:
     link: https://sites.utexas.edu/studyabroad/self-discovery-in-austria/
 ---
 
-Hi, my name is Joseph. I'm a HPC Systems Engineer at Oak Ridge National Labs
-with a background in mechanical engineering. I'm an engineer through and
-through, and will use whatever tool I think is necessary to solve a problem,
-whether it be a wrench or a keyboard. If you're interested in some of the
-projects I've done in my spare time, click the Projects tab above. If you'd like
-to contact me, please use one of the links above or email me at
-[jvoss@josephvoss.com](mailto:jvoss@josephvoss.com).
+Hi, my name is Joseph. I'm a Site Reliability Engineer at Cloudflare,
+with a background in mechanical engineering and high performance computing. I'm
+an engineer through and through, and will use whatever tool I think is
+necessary to solve a problem, whether it be a wrench or a keyboard. If you're
+interested in some of the projects I've done in my spare time, click the
+Projects tab above. If you'd like to contact me, please use one of the links
+above or email me at [jvoss@josephvoss.com](mailto:jvoss@josephvoss.com).
