@@ -21,7 +21,7 @@ remote repository.
 An object store, the most common of which is Amazon's S3, is a storage solution
 where you can store and generic data using a key. They've exploded in
 popularity in the past few years due to their flexibility and low cost. People
-can store retrive whatever data they want in the cloud using a standardized
+can store retrieve whatever data they want in the cloud using a standardized
 API. Pricing for these objects stores is a different story, but it's been
 really helpful to developers to have such a flexible and standardized storage
 option.
@@ -116,9 +116,9 @@ are backed up, managing the ssh/git server processes, etc. In short you would
 need to manage a compute and storage system to self-host git, or build
 automation to add authentication to a remote git server. In this case you only
 to worry about the storage consumed by the repositories. Authentication can be
-easier integrated with exisiting IAM tools already tied into S3. However,
+easier integrated with existing IAM tools already tied into S3. However,
 granular role controls are lost. Write access to the bucket to push testing
-branches allows overridding production branches.
+branches allows overriding production branches.
 
 Regardless of the downsides, currently this tool it works
 as a proof of concept to push and pull repositories to S3 buckets. If you're
@@ -126,7 +126,9 @@ interesting in reading more about it, the code is hosted on
 [Github](https://github.com/josephvoss/git-remote-s3), along with pre-built
 binaries.
 
-## Want to learn more? Go read these posts by people who know what they're doing
+## Want to learn more?
+
+Go read these posts by people who know what they're doing
 
 * ["How to Write a New Git Protocol"](https://rovaughn.github.io/2015-2-9.html)
 * ["Developing a Custom Remote Git Helper"](https://www.apriorit.com/dev-blog/715-virtualization-git-remote-helper)
