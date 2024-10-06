@@ -1,5 +1,5 @@
 ---
-title: How `git fsck --lost-found` save my lost work
+title: How `git fsck --lost-found` saved my lost work
 date: 2024-09-24T00:00:00-05:00
 draft: false
 type: post
@@ -10,7 +10,7 @@ description: |
   Just a blog post showing off a helpful git feature
 ---
 
-tl;dr I did `git reset HEAD --hard` without thinking, but was able to recover
+tl;dr I did `git reset HEAD` without thinking, but was able to recover
 my lost work using a helpful git feature that I wanted to highlight. Learn from
 my mistakes and how to undo them.
 
@@ -23,12 +23,12 @@ story short when I recovered from this file it removed several hours worth of
 recent changes.
 
 No worries though, I'll just restore from the last commit right? Except it
-wasn't until after I ran the restore that I realized that commit was several
-hours old. Thankfully I had run git add consistently, so I knew my changes
-existed somewhere in my local object store. They just weren't tied to a commit
-or really any tracking tools.
+wasn't until after I ran the `git reset HEAD` that I realized my latest commit
+was several hours old. Thankfully I had run git add consistently, so I knew my
+changes existed somewhere in my local object store. They just weren't tied to a
+commit or really any tracking tools.
 
-Enter git fsck --lost-found
+Enter `git fsck --lost-found`
 
 ```
 --lost-found
@@ -52,12 +52,13 @@ dangling blob 43ff423b391e642b53083bbe00f361863ff67ab2
 dangling blob e17f0d9bed49f29d1fe101332a79026a54620a92
 ```
 
-Other than just writing out objects to the .git/lost-found dir, git fsck also
-prints the blobs/commits it finds dangling. We can extract these blobs and grep
-through them to hopefully find my changes.
+Other than just writing out objects to the `.git/lost-found` dir, `git fsck`
+also prints the blobs/commits it finds dangling. We can extract these blobs and
+grep through them to hopefully find my changes.
 
 ```
-$ for blob in $(git fsck --lost-found | grep blob | cut -d ' ' -f3);  do git cat-file -p $blob | grep "package foobar" && echo $blob; done
+$ for blob in $(git fsck --lost-found | grep blob | cut -d ' ' -f3); \
+    do git cat-file -p $blob | grep "package foobar" && echo $blob; done
 Checking object directories: 100% (256/256), done.
 Checking objects: 100% (3986/3986), done.
 package foobar 
@@ -66,7 +67,6 @@ $ git cat-file -p 069dac305daa21948d2ec3f52f2b680992b58fec | head
 package foobar
  
 import (
-//      "net/netip"
         "fmt"
 ...
 ```
@@ -74,7 +74,7 @@ import (
 In sum, firstly don't get into this state
 * Commit early and often, you can clean up changes later
 * Don't blindly reload from old swp files
-* Don't blindly restore changes from the git index
+* Don't blindly run `git reset`
 
 If you ignore all that advice though and lose some changes, all hope isn't
 lost. Git has some extremely useful recovery tools if you know where to look.
