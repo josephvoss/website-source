@@ -23,14 +23,14 @@ story short when I recovered from this file it removed several hours worth of
 recent changes.
 
 No worries though, I'll just restore from the last commit right? Except it
-wasn't until after I ran the `git reset HEAD` that I realized my latest commit
+wasn't until after I ran `git reset HEAD` that I realized my latest commit
 was several hours old. Thankfully I had run git add consistently, so I knew my
 changes existed somewhere in my local object store. They just weren't tied to a
 commit or really any tracking tools.
 
 Enter `git fsck --lost-found`
 
-```
+```bash
 --lost-found
     Write dangling objects into .git/lost-found/commit/ or
     .git/lost-found/other/, depending on type. If the object is a blob, the
@@ -41,7 +41,7 @@ My changes existed somewhere as a dangling blob in the object store, so with a
 list of these blobs I figured I might be able to recover. Turns out it was much
 easier than I though it'd be.
 
-```
+```bash {linenos=table}
 $ git fsck --lost-found | grep blob | tail -5
 Checking object directories: 100% (256/256), done.
 Checking objects: 100% (3986/3986), done.
@@ -56,7 +56,7 @@ Other than just writing out objects to the `.git/lost-found` dir, `git fsck`
 also prints the blobs/commits it finds dangling. We can extract these blobs and
 grep through them to hopefully find my changes.
 
-```
+```bash {linenos=table}
 $ for blob in $(git fsck --lost-found | grep blob | cut -d ' ' -f3); \
     do git cat-file -p $blob | grep "package foobar" && echo $blob; done
 Checking object directories: 100% (256/256), done.
