@@ -4,6 +4,7 @@ date: 2024-09-24T00:00:00-05:00
 draft: false
 type: post
 tags:
+  - git
   - software
 description: |
   Sept 2024:

@@ -5,6 +5,7 @@ draft: false
 type: post
 tags:
   - software
+  - git 
 description: |
   May 2025:
   Plug for `git worktree`
