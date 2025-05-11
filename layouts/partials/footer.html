@@ -16,3 +16,13 @@
     {{ end }}
   </ul>
 </div>
+
+<div>
+  <h2 class="text-center">Other Sites</h2>
+  <hr>
+  <ul>
+    {{ range .Site.Params.other_sites }}
+    <li><a class='nounder-link' href='{{ .url }}'>{{ .name }}</a></li>
+    {{ end }}
+  </ul>
+</div>

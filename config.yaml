@@ -17,6 +17,9 @@ params:
         href: https://www.linkedin.com/in/josephvoss14
       - classes: fas fa-file-alt fa-1x
         href: /resume.pdf
+  other_sites:
+    - name: Photos of Luca
+      url: https://luca.josephvoss.com
 
 permalinks:
   posts: /:title/
