@@ -12,15 +12,16 @@ description: |
 ---
 
 Earlier this month I adopted an adorable puppy, so I wanted an easy way to share
-photos of him (tl;dr skip [here][Luca]) without relying on social media. From
-working at Cloudflare I've been exposed to all the features available on our
-developer platform, and this felt like a perfect opportunity to play around and
-set something up (other than this blog). Note to any of my co-workers or anyone
-familiar with Typescript, I don't know what I'm doing and I'm sorry 😀
+photos of him (for puppy picks just skip [here][Luca]) without relying on social
+media. From working at Cloudflare I've been exposed to all the features
+available on our developer platform, and this felt like a perfect opportunity to
+play around and set something up (other than this blog). Note to any of my
+co-workers or anyone familiar with Typescript, I don't know what I'm doing and
+I'm sorry 😀
 
 ## Image viewer
 
-This was shockingly easy. These images will be stored in an [R2][R2] bucket on
+This was shockingly easy. These images will be stored in an [R2] bucket on
 the free plan, so we just need to have a site that will:
 
 * Fetch all the images in the bucket
@@ -28,7 +29,7 @@ the free plan, so we just need to have a site that will:
 
 The first step can be done with a very basic Worker (it's almost identical to
 the example code in the developer docs). We just need to provide a `/list`
-endpoint which provide a json array of all the keys that we should fetch, and
+endpoint which provides a json array of all the keys that we should fetch, and
 then an endpoint `/image/<image-id>` to return the image content itself.
 
 ```
@@ -53,7 +54,7 @@ router.get("/list", async ({env, req, ctx}) => {
 router.get('/image/:image_id', async ({req, env}) => {
   const object = await env.PHOTO_BUCKET.get(req.params.image_id);
   if (object === null) {
-    return new Response("ImageNot Found", { status: 404 });
+    return new Response("Image Not Found", { status: 404 });
   }
   return new Response(object.body, {
     headers,
@@ -101,7 +102,7 @@ and [Tailwind] can easily make this into a responsive grid.
     }
     getImages()
     </script>
-<!-- make it a photo gallery classes -->
+<!-- make it a photo gallery -->
     <script src="fancybox-cdn-src"></script>
     <script>
       Fancybox.bind('[data-fancybox="gallery"]', {
@@ -133,8 +134,8 @@ view this site live [here][Luca].
 
 ## Okay great, but how do we upload images to R2?
 
-If you were sane you would just do it in the Cloudflare dash directly, or using
-any S3 compatible API. I unfortunately did this on hard mode, and wanted to
+If you were sane you would just do it in the Cloudflare dash directly or using
+any S3 compatible API. I unfortunately did this on hard mode and wanted to
 directly upload images from [Google Photos][GPhotos]. They thankfully do provide
 an [API][GPhotos api docs], but I needed to:
 
@@ -149,15 +150,15 @@ images if I took more than a few seconds selecting images.
 
 Turns out that Workers will [stop executing][Duration] if the client disconnects
 or a timeout of 30 seconds is reached. The latter case isn't supposed to usually
-happen (and the tasks are supposed to be extended with [waitUntil][waitUntil])
-but I was still having issues. Maybe my colleagues were bouncing connections on
-metals in Dallas more frequently that normal, maybe my phone was disconnected
-when I changed tabs, or (more likely) my code was failing in odd ways.
-Regardless, I needed a more robust solution.
+happen (and the tasks are supposed to be extended with [waitUntil]) but I was
+still having issues. Maybe my colleagues were bouncing connections on metals in
+Dallas more frequently that normal, maybe my phone was disconnected when I
+changed tabs, or (more likely) my code was failing in odd ways.  Regardless I
+needed a more robust solution.
 
-The recommended solutions are using different paid products ([Queues][Queues] or
-[Tail Workers][Tail Workers]), but I'm cheap so I figured I could use our [key
-value store][KV]. Now the flow is:
+The recommended solutions are using different paid products ([Queues] or [Tail
+Workers]), but I'm cheap so I figured I could use our [key value store][KV]. Now
+the flow is:
 
 * User hits the main static page, creates a session
 * backend worker with the OAuth client secrets:
@@ -165,9 +166,9 @@ value store][KV]. Now the flow is:
     * saves session information in KV
 * front end page polls a `/check_status` endpoint periodically, which:
     * updates the status text visible to the user
-    * reads the users' session from KV, figures out what it needs to do
-    * Checks "Picker session" status, set media to fetch if done
-    * Check media to fetch, take one off top and upload to R2
+    * reads the user's session from KV, figures out what it needs to do
+    * Checks "Picker session" status, set list of media to fetch if done
+    * Fetch media from list, take one off top and upload to R2
     * *Importantly* - only writes back to KV once the operation it's doing is
       complete
 
@@ -176,18 +177,18 @@ per second, the free KV plan allows only [1,000 writes a day][kv-limits], etc),
 but it's able to consistently fetch and retrieve media from Google Photos, so
 I'm happy.
 
-One other thing to note - user auth to this picker page. Apologies but it's
-locked down to just me. [Cloudflare Access][Access] made that really easy. With
-using Google as the identity source I'm able to gate access to the worker to
-only my account. Access also signs a JWT which I'm able to verify to ensure it's
-really mean doing these write operations.
+One other thing to note - user auth to this picker page. For now it's locked
+down to just me, which was really straightforward to do with [Cloudflare
+Access][Access]. With using Google as the identity source I'm able to gate
+access to the worker to only my account. Access also signs a JWT which I'm able
+to verify to ensure it's really mean doing these write operations.
 
 If you're curious to read more the source code for the photo-uploader is
 available [here][picker-code]. It's much more involved than the image gallery,
 and took me several days instead of an afternoon. I'll still poke around at it
-trying to improve some things trying to improve it, but it's in a stable-ish
-state if anyone wants to do something similar. My recommendation though: 
-use an S3-api to manage the photos.
+trying to improve some things, but it's in a stable-ish state if anyone wants to
+do something similar. My recommendation though: just use an S3-api to manage the
+photos.
 
 [R2]: https://developers.cloudflare.com/r2/
 [Fancybox]: https://fancyapps.com/fancybox/
