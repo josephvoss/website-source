@@ -12,7 +12,7 @@ description: |
 ---
 
 Earlier this month I adopted an adorable puppy, so I wanted an easy way to share
-photos of him (for puppy picks just skip [here][Luca]) without relying on social
+photos of him (for puppy pics just skip [here][Luca]) without relying on social
 media. From working at Cloudflare I've been exposed to all the features
 available on our developer platform, and this felt like a perfect opportunity to
 play around and set something up (other than this blog). Note to any of my
