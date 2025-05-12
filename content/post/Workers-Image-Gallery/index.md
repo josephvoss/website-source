@@ -152,7 +152,7 @@ Turns out that Workers will [stop executing][Duration] if the client disconnects
 or a timeout of 30 seconds is reached. The latter case isn't supposed to usually
 happen (and the tasks are supposed to be extended with [waitUntil]) but I was
 still having issues. Maybe my colleagues were bouncing connections on metals in
-Dallas more frequently that normal, maybe my phone was disconnected when I
+Dallas more frequently than normal, maybe my phone was disconnected when I
 changed tabs, or (more likely) my code was failing in odd ways.  Regardless I
 needed a more robust solution.
 
@@ -181,7 +181,7 @@ One other thing to note - user auth to this picker page. For now it's locked
 down to just me, which was really straightforward to do with [Cloudflare
 Access][Access]. With using Google as the identity source I'm able to gate
 access to the worker to only my account. Access also signs a JWT which I'm able
-to verify to ensure it's really mean doing these write operations.
+to verify to ensure it's really me doing these write operations.
 
 If you're curious to read more the source code for the photo-uploader is
 available [here][picker-code]. It's much more involved than the image gallery,
