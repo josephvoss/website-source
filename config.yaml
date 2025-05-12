@@ -1,13 +1,13 @@
 ---
-baseURL: ""
+baseURL: https://josephvoss.com
 languageCode: "en-us"
-title: "My New Hugo Site"
+title: "Joseph Voss personal blog"
 
 params:
   author:
     name: Joseph Voss
     blurb: |
-      HPC Systems Engineer at Oak Ridge National Laboratory with a background in Mechanical Engineering 
+      SRE at Cloudflare with a background in HPC and Mechanical Engineering 
     icons:
       - classes: fa fa-envelope fa-1x
         href: mailto:jvoss@josephvoss.com
@@ -17,6 +17,9 @@ params:
         href: https://www.linkedin.com/in/josephvoss14
       - classes: fas fa-file-alt fa-1x
         href: /resume.pdf
+  other_sites:
+    - name: Photos of Luca
+      url: https://luca.josephvoss.com
 
 permalinks:
   posts: /:title/
